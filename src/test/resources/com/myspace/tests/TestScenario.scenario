@@ -1,0 +1,126 @@
+<scenario>
+  <name>TestScenario.scenario</name>
+  <maxRuleFirings>100000</maxRuleFirings>
+  <globals>
+    <fact-data>
+      <type>Result</type>
+      <fieldData/>
+      <name>res</name>
+      <isModify>false</isModify>
+    </fact-data>
+  </globals>
+  <fixtures>
+    <fact-data>
+      <type>Message</type>
+      <fieldData>
+        <field-data>
+          <name>status</name>
+          <value>1</value>
+          <nature>4</nature>
+        </field-data>
+        <field-data>
+          <name>message</name>
+          <value>hello</value>
+          <nature>4</nature>
+        </field-data>
+      </fieldData>
+      <name>m1</name>
+      <isModify>false</isModify>
+    </fact-data>
+    <fact-data>
+      <type>Message</type>
+      <fieldData>
+        <field-data>
+          <name>status</name>
+          <value>2</value>
+          <nature>4</nature>
+        </field-data>
+        <field-data>
+          <name>message</name>
+          <value>hello</value>
+          <nature>4</nature>
+        </field-data>
+      </fieldData>
+      <name>m2</name>
+      <isModify>false</isModify>
+    </fact-data>
+    <execution-trace>
+      <executionTimeResult>5</executionTimeResult>
+      <numberOfRulesFired>2</numberOfRulesFired>
+    </execution-trace>
+    <expect-rule>
+      <ruleName>hello 1</ruleName>
+      <expectedCount>1</expectedCount>
+      <explanation>Rule [hello 1] activated 1 times.</explanation>
+      <successResult>true</successResult>
+      <actualResult>1</actualResult>
+    </expect-rule>
+    <expect-rule>
+      <ruleName>hello 2</ruleName>
+      <expectedCount>1</expectedCount>
+      <explanation>Rule [hello 2] activated 1 times.</explanation>
+      <successResult>true</successResult>
+      <actualResult>1</actualResult>
+    </expect-rule>
+    <fact-data>
+      <type>Message</type>
+      <fieldData>
+        <field-data>
+          <name>status</name>
+          <value>2</value>
+          <nature>4</nature>
+        </field-data>
+        <field-data>
+          <name>message</name>
+          <value>hello</value>
+          <nature>4</nature>
+        </field-data>
+      </fieldData>
+      <name>m3</name>
+      <isModify>false</isModify>
+    </fact-data>
+    <expect-fact>
+      <fieldValues>
+        <expect-field>
+          <fieldName>result</fieldName>
+          <expected>[rule 2]</expected>
+          <actualResult>[rule 2]</actualResult>
+          <successResult>false</successResult>
+          <explanation>[res] field [result] was [[rule 2]] expected [[rule 2]].</explanation>
+          <operator>==</operator>
+          <nature>1</nature>
+        </expect-field>
+      </fieldValues>
+      <name>res</name>
+      <anonymous>false</anonymous>
+    </expect-fact>
+    <execution-trace>
+      <executionTimeResult>0</executionTimeResult>
+      <numberOfRulesFired>0</numberOfRulesFired>
+    </execution-trace>
+    <expect-rule>
+      <ruleName>hello 1</ruleName>
+      <expectedCount>0</expectedCount>
+      <explanation>Rule [hello 1] activated 0 times.</explanation>
+      <successResult>true</successResult>
+      <actualResult>0</actualResult>
+    </expect-rule>
+    <expect-rule>
+      <ruleName>hello 2</ruleName>
+      <expectedCount>0</expectedCount>
+      <explanation>Rule [hello 2] activated 0 times.</explanation>
+      <successResult>true</successResult>
+      <actualResult>0</actualResult>
+    </expect-rule>
+  </fixtures>
+  <lastRunResult>2019-10-23 10:06:58.212 UTC</lastRunResult>
+  <rules/>
+  <inclusive>false</inclusive>
+  <packageName>com.myspace.tests</packageName>
+  <imports>
+    <imports/>
+  </imports>
+  <ksessions>
+    <string>kiesession2</string>
+  </ksessions>
+</scenario>

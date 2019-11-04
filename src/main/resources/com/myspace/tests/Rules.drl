@@ -1,0 +1,17 @@
+package com.myspace.tests;
+
+import com.myspace.tests.Message;
+import com.myspace.tests.Result;
+
+rule "hello 1"
+    when
+        Message(  status == 1 )
+    then
+end
+
+rule "hello 2" extends "hello 1"
+    when
+        Message( message == "hello" )
+    then
+        res.getResult().add("rule 2");
+end

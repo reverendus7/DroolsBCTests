@@ -1,0 +1,3 @@
+package com.myspace.tests;
+
+global com.myspace.tests.Result res;
